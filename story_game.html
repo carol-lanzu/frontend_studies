@@ -2,24 +2,45 @@
 <html>
   <head>
     <title>Story game</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+      }
+      .options_buttons {
+        background-color: rgb(210, 191, 251);
+        text-align: center;
+        border-radius: 40%;
+        padding: 15px 1px;
+        width: 90px;
+        height: 80px;
+      }
+      .questions_answers {
+        background-color: olivedrab;
+        text-align: center;
+        min-height: 70vh;
+      }
+    </style>
   </head>
-  <header style="background-color: darkgreen">
+  <header style="background-color: darkgreen; padding: 20px 20px">
     <h1 style="text-align: center">Story game</h1>
   </header>
   <body>
-    <div style="background-color: forestgreen;"> 
-    <h2 style="text-align: center;">Forest adventure</h2> 
-    <p style="text-align: center;"></pstyle> <i>Choose Your Own Adventure ...</i></p>
+    <div style="background-color: forestgreen">
+      <h2 style="text-align: center">Forest adventure</h2>
+      <p style="text-align: center"><i>Choose Your Own Adventure ...</i></p>
     </div>
-    <div style="background-color: olivedrab;">
-        <p style="text-align: center"> <i> You just got lost in the middle of a magic Forest...</i></p>
-        <!-- button  <br>Will you stay here or explore the place?-->
-         <!-- <button></button> -->
+    <div class="questions_answers">
+      <p><i> You just got lost in the middle of a magic Forest...</i></p>
+      <button class="options_buttons">I will stay here</button>
+      <button class="options_buttons">I will explore the place</button>
     </div>
-    </body>
+  </body>
   <footer style="background-color: darkgreen">
-    <p style="text-align: right"> <i>by Carol Lanzu 26.1</i></i>
-
+    <p style="text-align: right"><i>by Carol Lanzu 26.1</i></p>
   </footer>
-
 </html>
