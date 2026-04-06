@@ -11,6 +11,11 @@
       body {
         margin: 0;
       }
+      .image_screen {
+        display: block;
+        margin: 0 auto;
+        border-radius: 40%;
+      }
       .options_buttons {
         background-color: rgb(210, 191, 251);
         text-align: center;
@@ -36,118 +41,126 @@
       }
     </style>
   </head>
-  <header style="background-color: darkgreen; padding: 20px 20px">
-    <h1 style="text-align: center">Story game</h1>
-  </header>
-  <body>
-    <div style="background-color: forestgreen">
-      <h2 style="text-align: center">Forest adventure</h2>
-      <p style="text-align: center"><i>Choose Your Own Adventure ...</i></p>
-    </div>
-    <div class="questions_answers">
-      <p id="question">
-        <i>
-          You just got lost in the middle of a magic Forest. What will you
-          do?</i
-        >
-      </p>
 
-      <div class="options_buttons_div">
-        <!-- Colocar imagens nos buttons? -->
-        <button
-          class="options_buttons"
-          id="option_1"
-          onclick="goToNextSceneLeft()"
-        >
-          I will explore the place to my left
-        </button>
-        <button
-          class="options_buttons"
-          id="option_2"
-          onclick="goToNextSceneRight()"
-        >
-          I will explore the place to my right
-        </button>
+  <body>
+    <header style="background-color: darkgreen; padding: 20px 20px">
+      <h1 style="text-align: center">Story game</h1>
+    </header>
+    <main>
+      <div style="background-color: forestgreen">
+        <h2 style="text-align: center">Forest adventure</h2>
+        <p style="text-align: center"><i>Choose Your Own Adventure ...</i></p>
       </div>
-    </div>
-    <script>
-      let currentSceneRight = 0;
-      let currentSceneLeft = 0;
-      function goToNextSceneRight() {
-        console.log(currentSceneRight);
-        if (currentSceneRight == 0) {
-          document.getElementById("question").innerHTML =
-            "<i> A glowing path appears in the forest and you follow it. It leads to a directional sign that splits into two. Where will you go? </i>";
-          document.getElementById("option_1").innerHTML =
-            "Where it says ocean beach";
-          document.getElementById("option_2").innerHTML =
-            "Where it says small village";
-          currentSceneRight = currentSceneRight + 1;
-        } else if (currentSceneRight == 1) {
-          document.getElementById("question").innerHTML =
-            "<i>On your way you found a magical creature and somehow you feel that it is calling you. What will you do?</i>";
-          document.getElementById("option_1").innerHTML =
-            "I'll ignore it and keep going";
-          document.getElementById("option_2").innerHTML =
-            "I'll follow it into the unknown";
-          currentSceneRight = currentSceneRight + 1;
-        } else if (currentSceneRight == 2) {
-          document.getElementById("question").innerHTML =
-            "<i>It leads to his friend. He is hurt, and needs help. What will you do?</i>";
-          document.getElementById("option_1").innerHTML =
-            "I'll freeze and do nothing";
-          document.getElementById("option_2").innerHTML =
-            "I'll do my best to help the magical creature";
-          currentSceneRight = currentSceneRight + 1;
-        } else if (currentSceneRight == 3) {
-          document.getElementById("question").innerHTML =
-            "<i>You were able to help him, and he'll be okay. They are going somewhere and you are following them. It leads to a magic door saying home. What will you do?<i>";
-          document.getElementById("option_1").innerHTML =
-            "I'll open it to go home";
-          document.getElementById("option_2").innerHTML =
-            "I'll stay here in the magic florest";
-          currentSceneRight = currentSceneRight + 1;
-        } else if (currentSceneRight == 4) {
-          document.getElementById("question").innerHTML =
-            "<i>That's the end of our adventure. Till next one!</i>";
-          document.getElementById("option_1").style.display = "none";
-          document.getElementById("option_2").style.display = "none";
+      <div class="questions_answers">
+        <p id="question">
+          <i>
+            You just got lost in the middle of a magic Forest. What will you
+            do?</i
+          >
+        </p>
+        <img
+          class="image_screen"
+          src="screen1.png"
+          alt="screen 1"
+          width="25%"
+        />
+        <div class="options_buttons_div">
+          <!-- Colocar imagens nos buttons? -->
+          <button
+            class="options_buttons"
+            id="option_1"
+            onclick="goToNextSceneLeft()"
+          >
+            I will explore the place to my left
+          </button>
+          <button
+            class="options_buttons"
+            id="option_2"
+            onclick="goToNextSceneRight()"
+          >
+            I will explore the place to my right
+          </button>
+        </div>
+      </div>
+      <script>
+        let currentSceneRight = 0;
+        let currentSceneLeft = 0;
+        function goToNextSceneRight() {
+          console.log(currentSceneRight);
+          if (currentSceneRight == 0) {
+            document.getElementById("question").innerHTML =
+              "<i> A glowing path appears in the forest and you follow it. It leads to a directional sign that splits into two. Where will you go? </i>";
+            document.getElementById("option_1").innerHTML =
+              "Where it says ocean beach";
+            document.getElementById("option_2").innerHTML =
+              "Where it says small village";
+            currentSceneRight = currentSceneRight + 1;
+          } else if (currentSceneRight == 1) {
+            document.getElementById("question").innerHTML =
+              "<i>On your way you found a magical creature and somehow you feel that it is calling you. What will you do?</i>";
+            document.getElementById("option_1").innerHTML =
+              "I'll ignore it and keep going";
+            document.getElementById("option_2").innerHTML =
+              "I'll follow it into the unknown";
+            currentSceneRight = currentSceneRight + 1;
+          } else if (currentSceneRight == 2) {
+            document.getElementById("question").innerHTML =
+              "<i>It leads to his friend. He is hurt, and needs help. What will you do?</i>";
+            document.getElementById("option_1").innerHTML =
+              "I'll freeze and do nothing";
+            document.getElementById("option_2").innerHTML =
+              "I'll do my best to help the magical creature";
+            currentSceneRight = currentSceneRight + 1;
+          } else if (currentSceneRight == 3) {
+            document.getElementById("question").innerHTML =
+              "<i>You were able to help him, and he'll be okay. They are going somewhere and you are following them. It leads to a magic door saying home. What will you do?<i>";
+            document.getElementById("option_1").innerHTML =
+              "I'll open it to go home";
+            document.getElementById("option_2").innerHTML =
+              "I'll stay here in the magic florest";
+            currentSceneRight = currentSceneRight + 1;
+          } else if (currentSceneRight == 4) {
+            document.getElementById("question").innerHTML =
+              "<i>That's the end of our adventure. Till next one!</i>";
+            document.getElementById("option_1").style.display = "none";
+            document.getElementById("option_2").style.display = "none";
+          }
         }
-      }
-      function goToNextSceneLeft() {
-        console.log(currentSceneLeft);
-        if (currentSceneLeft == 0) {
-          document.getElementById("question").innerHTML =
-            "<i> A glowing path appears in the forest and you follow it. It leads to a directional sign that splits into two. Where will you go? </i>";
-          document.getElementById("option_1").innerHTML =
-            "Where it says ocean beach";
-          document.getElementById("option_2").innerHTML =
-            "Where it says small village";
-          currentSceneLeft = currentSceneLeft + 1;
-        } else if (currentSceneLeft == 1) {
-          document.getElementById("question").innerHTML =
-            "<i>On your way you found a magical creature and somehow you feel that it is calling you. What will you do?</i>";
-          document.getElementById("option_1").innerHTML =
-            "I'll ignore it and keep going";
-          document.getElementById("option_2").innerHTML =
-            "I'll follow it into the unknown";
-          currentSceneLeft = currentSceneLeft + 1;
-        } else if (currentSceneLeft == 2) {
-          document.getElementById("question").innerHTML =
-            "<i>Now that you continue on your journey you found a magic door saying home. What will you do?</i>";
-          document.getElementById("option_1").innerHTML =
-            "I'll open it to go home";
-          document.getElementById("option_2").innerHTML =
-            "I'll stay here in the magic florest";
-          currentSceneLeft = currentSceneLeft + 1;
-        } else if (currentSceneLeft == 3) {
-          document.getElementById("question").innerHTML =
-            "<i>That's the end of our adventure. Till next one!</i>";
-          document.getElementById("option_1").style.display = "none";
-          document.getElementById("option_2").style.display = "none";
+        function goToNextSceneLeft() {
+          console.log(currentSceneLeft);
+          if (currentSceneLeft == 0) {
+            document.getElementById("question").innerHTML =
+              "<i> A glowing path appears in the forest and you follow it. It leads to a directional sign that splits into two. Where will you go? </i>";
+            document.getElementById("option_1").innerHTML =
+              "Where it says ocean beach";
+            document.getElementById("option_2").innerHTML =
+              "Where it says small village";
+            currentSceneLeft = currentSceneLeft + 1;
+          } else if (currentSceneLeft == 1) {
+            document.getElementById("question").innerHTML =
+              "<i>On your way you found a magical creature and somehow you feel that it is calling you. What will you do?</i>";
+            document.getElementById("option_1").innerHTML =
+              "I'll ignore it and keep going";
+            document.getElementById("option_2").innerHTML =
+              "I'll follow it into the unknown";
+            currentSceneLeft = currentSceneLeft + 1;
+          } else if (currentSceneLeft == 2) {
+            document.getElementById("question").innerHTML =
+              "<i>Now that you continue on your journey you found a magic door saying home. What will you do?</i>";
+            document.getElementById("option_1").innerHTML =
+              "I'll open it to go home";
+            document.getElementById("option_2").innerHTML =
+              "I'll stay here in the magic florest";
+            currentSceneLeft = currentSceneLeft + 1;
+          } else if (currentSceneLeft == 3) {
+            document.getElementById("question").innerHTML =
+              "<i>That's the end of our adventure. Till next one!</i>";
+            document.getElementById("option_1").style.display = "none";
+            document.getElementById("option_2").style.display = "none";
+          }
         }
-      }
-    </script>
+      </script>
+    </main>
   </body>
   <footer style="background-color: darkgreen">
     <p style="text-align: right"><i>by Carol Lanzu 26.1</i></p>
